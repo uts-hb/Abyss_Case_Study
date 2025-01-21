@@ -1,4 +1,6 @@
-# Technical Case Study: Asset Visual Coverage Analysis
+![image](https://github.com/user-attachments/assets/e5bf7fdd-d2c8-4322-8074-7c4bd3d9c274)# Technical Case Study: Asset Visual Coverage Analysis
+
+![alt text]([http://url/to/img.png](https://facebookresearch.github.io/projectaria_tools/assets/images/camera3d-coordinate-frame-8e7eb3a8462f8402724205da4332725a.png))
 
 The dobot_magician_driver provides a ROS interface to communicate with the Dobot Magician.
 Please refer to [wiki](https://github.com/gapaul/dobot_magician_driver/wiki/) for more detailed instructions on how to install dobot_magician_driver to raspberry pi and interface with Matlab. 
