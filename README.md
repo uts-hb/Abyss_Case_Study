@@ -2,7 +2,7 @@
 
 This 
 
-![alt text](https://facebookresearch.github.io/projectaria_tools/assets/images/camera3d-coordinate-frame-8e7eb3a8462f8402724205da4332725a.png)](https://facebookresearch.github.io/projectaria_tools/assets/images/camera3d-coordinate-frame-8e7eb3a8462f8402724205da4332725a.png)
+![alt text](https://facebookresearch.github.io/projectaria_tools/assets/images/camera3d-coordinate-frame-8e7eb3a8462f8402724205da4332725a.png)
 
 The dobot_magician_driver provides a ROS interface to communicate with the Dobot Magician.
 Please refer to [wiki](https://github.com/gapaul/dobot_magician_driver/wiki/) for more detailed instructions on how to install dobot_magician_driver to raspberry pi and interface with Matlab. 
