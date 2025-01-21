@@ -23,7 +23,7 @@ The program projects each point in the point cloud onto a 2D plane using camera 
 
 * ```load_point_cloud(pcd_path)```: Reads a point cloud from a PCD file into a NumPy array.
 
-* ```load_trajectory(csv_path)```: Loads camera trajectory data from a CSV file, including timestamp, position, and orientation (roll, pitch, yaw).
+* ```load_trajectory(csv_path)```: Loads camera trajectory data from a CSV file, including timestamp, position, and orientation (roll, pitch, yaw). The file ```trajectory_s.csv``` includes full camera poses, while ```trajectory_pose1.csv``` contains only one pose, and ```trajectory_pose2.csv``` includes two poses.
 
 * ```calculate_rotation_matrix(roll, pitch, yaw)```: Computes a rotation matrix for transforming points to the camera coordinate frame.
 
