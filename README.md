@@ -17,6 +17,20 @@ Given roll, pitch, and yaw values are assumed to be provided in radians.
 
 The program projects each point in the point cloud onto a 2D plane using camera poses and intrinsic parameters. Instead of using the field of view (FOV) to determine point validity, the image width and height are used as criteria for valid point projections.
 
+## Code Structure Overview
+
+* ```load_camera_intrinsics(json_path)```: Loads camera intrinsics, including focal lengths (fx, fy), principal points (cx, cy), and field of view.
+
+* ```load_point_cloud(pcd_path)```: Reads a point cloud from a PCD file into a NumPy array.
+
+* ```load_trajectory(csv_path)```: Loads camera trajectory data from a CSV file, including timestamp, position, and orientation (roll, pitch, yaw).
+
+* ```calculate_rotation_matrix(roll, pitch, yaw)```: Computes a rotation matrix for transforming points to the camera coordinate frame.
+
+* ```compute_coverage(point_cloud, trajectory, camera_intrinsics, image_path)```: Projects points to determine coverage and computes the percentage of points visible from the images.
+
+* ```visualization(covered_points, uncovered_points, cameras)```: Displays covered and uncovered points with camera coordinate frames.
+
 ## Prerequisites
 
 Ensure the following Python packages are installed before running the code:
