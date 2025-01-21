@@ -1,0 +1,15 @@
+{
+    "fx": 600,
+    "fy": 600,
+    "cx": 250,
+    "cy": 250,
+    "hor_fov": 45,
+    "ver_fov": 45,
+    "distortion_coefficients": [
+        0,
+        0,
+        0,
+        0,
+        0
+    ]
+}
