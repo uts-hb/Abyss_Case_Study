@@ -1,43 +1,52 @@
 # Technical Case Study: Asset Visual Coverage Analysis
 
-This 
+## Objective 
 
+This calculates the visual coverage of an asset. Specifically, it determines the percentage of the asset, represented as a point cloud, that is covered by images based on camera trajectory and intrinsic parameters.
+
+## Methodology 
+
+### Camera Coordinate Frame
+
+Upon receiving input data, the camera coordinate frame is set as shown below:
 ![alt text](https://facebookresearch.github.io/projectaria_tools/assets/images/camera3d-coordinate-frame-8e7eb3a8462f8402724205da4332725a.png)
 
-The dobot_magician_driver provides a ROS interface to communicate with the Dobot Magician.
-Please refer to [wiki](https://github.com/gapaul/dobot_magician_driver/wiki/) for more detailed instructions on how to install dobot_magician_driver to raspberry pi and interface with Matlab. 
+Given roll, pitch, and yaw values are assumed to be provided in radians.
 
+### Point Cloud Projection 
 
-To run the provided code, you need to install the following packages:
+The program projects each point in the point cloud onto a 2D plane using camera poses and intrinsic parameters. Instead of using the field of view (FOV) to determine point validity, the image width and height are used as criteria for valid point projections.
+
+## Prerequisites
+
+Ensure the following Python packages are installed before running the code:
 ```
 pip install numpy opencv-python open3d pandas
 ```
 
+## Running Asset Visual Coverage 
 
-## Features
-Current supported features are listed below:
-- Joint position-based control
-- Joint state publisher
-- Cartesian position-based control
-- End effector cartesian state publisher
-- Tool state control: Currently supporting gripper and suction cup effectors
-- IO states control
-- Dobot safety status publisher
-- Software EStop
-- Conveyor belt and linear rail control
+Run the script as follows:
+```
+python3 asset_coverage.py
+```
+Modify the paths to match your local files:
 
-## Contents
-This repository contains the dobot_magician_driver and a couple of example scripts, such as:
-- MATLAB example: A quick and easy way to communicate with the driver to control the robot, providing that the driver is already running. This example should only be used as a reference for using the driver with MATLAB. 
+* ```asset.pcd``` (point cloud)
 
-## Dependencies
-This package requires libserial and lubusb-1.0. Please refer to the wiki for installation instruction.
+* ```trajectory.csv``` (camera trajectory)
 
-## Installation
-Please refer to the wiki for installation instruction.
+* ```camera_intrinsic.json``` (camera intrinsic parameters)
 
-## Usage
-Please refer to the wiki for usage instruction.
+## Result 
 
-## To do
-- Add example script for Python and C++
+A visualization function is provided to display the results. The output highlights the coverage of points in the point cloud:
+
+  * **Red**: Covered point
+  * **Black**: Uncovered point 
+ ![Screenshot from 2025-01-21 12-42-06](https://github.com/user-attachments/assets/2bc5efa2-cb58-4eb2-ba28-9a8632390aa8)
+
+## further works 
+
+Currently, the implementation assumes that the camera can observe all features in front of it, without accounting for occlusions or obstructions. Future improvements should incorporate occlusion handling for more accurate coverage analysis.
+
