@@ -46,7 +46,7 @@ A visualization function is provided to display the results. The output highligh
   * **Black**: Uncovered point 
  ![Screenshot from 2025-01-21 12-42-06](https://github.com/user-attachments/assets/2bc5efa2-cb58-4eb2-ba28-9a8632390aa8)
 
-## further works 
+## Future work
 
 Currently, the implementation assumes that the camera can observe all features in front of it, without accounting for occlusions or obstructions. Future improvements should incorporate occlusion handling for more accurate coverage analysis.
 
